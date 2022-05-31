@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>18.3.1 - Zadanie: Na vypracovanie</title>
+    <style>
+
+    </style>
+</head>
+<body>
+     <script>
+        let menaHercov = [];
+        class Movie{
+            constructor(nazovFilmu,rok,hlavnaPostava){
+                this.nazovFilmu = nazovFilmu;
+                this.rok = rok;
+                this.hlavnaPostava = hlavnaPostava;
+                
+                
+            }
+            printDetail() {
+                console.log('Nazov filmu  : ',this.nazovFilmu);
+                console.log('Rok vydania  : ',this.rok);
+                console.log('V hlavnej úlohe  : ',this.hlavnaPostava);
+                menaHercov.push(this.hlavnaPostava);
+            }
+            printLongestActor() {
+                let najdlhsieSlovo = menaHercov.reduce(
+                    function (a, b) {
+                        return a.length > b.length ? a : b;
+                        }
+                );
+                         
+                console.log('Najdlhsie meno ma : ',najdlhsieSlovo);
+            }
+        }
+
+        let film1 = new Movie('Lolek a Bolek', 2022, 'Lolek' );
+        let film2 = new Movie('Janko a Marienka', 2021, 'JankoMarienkovic' );
+        let film3 = new Movie('Janko Hrasko', 2010, 'Janko' );
+
+
+        film1.printDetail();
+        film2.printDetail();
+        film3.printDetail();
+        film1.printLongestActor();
+        
+    </script>
+</body>
+</html>
